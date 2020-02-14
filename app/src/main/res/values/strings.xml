@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Lab_Assignment_Android</string>
     <string name="api_key">AIzaSyC__PTaY-owTjlo9M1VGm33Nh8dp9sygI8</string>
-
+    <string name="api_key_places">AIzaSyC__PTaY-owTjlo9M1VGm33Nh8dp9sygI8</string>
+    <string name="api_key_class">AIzaSyC__PTaY-owTjlo9M1VGm33Nh8dp9sygI8</string>
 </resources>

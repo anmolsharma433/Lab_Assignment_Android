@@ -6,4 +6,166 @@
     android:layout_height="match_parent"
     tools:context=".MapFragment">
 
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/map_fragment"
+        android:name="com.google.android.gms.maps.SupportMapFragment"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/rouded_button"
+        android:id="@+id/searchLayout"
+
+        >
+
+        <fragment android:id="@+id/autocomplete_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Enter Address, City or Zip Code"
+            android:imeOptions="actionSearch"
+            android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
+            />
+    </LinearLayout>
+
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="120dp"
+        android:id="@+id/mapTypeLayout"
+        android:orientation="vertical"
+        android:layout_gravity="end|top">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/normal_mapType"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/normal"
+            android:scaleType="fitCenter"
+            android:background="@drawable/roundcorner"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:paddingRight="9dp"
+            android:paddingLeft="9dp"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/sattelite_maptype"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/sattelite"
+            android:scaleType="fitCenter"
+            android:background="@drawable/roundcorner"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:paddingRight="9dp"
+            android:paddingLeft="9dp"
+            android:clickable="true"/>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/terrain_maptype"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/terrain"
+            android:scaleType="fitCenter"
+            android:background="@drawable/roundcorner"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:paddingRight="9dp"
+            android:paddingLeft="9dp"
+            android:clickable="true"/>
+
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="20dp"
+        android:background="@android:color/transparent"
+        android:scrollbars="none"
+        >
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:background="@android:color/transparent"
+
+        >
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginBottom="50dp"
+            android:layout_marginLeft="10dp"
+            android:textSize="12dp"
+            android:textAlignment="center"
+            android:id="@+id/restaurant"
+            android:text="Restaurants"
+            android:fitsSystemWindows="true"
+            android:background="@drawable/ripple"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginBottom="50dp"
+            android:layout_marginLeft="10dp"
+
+            android:id="@+id/cafe"
+            android:text="Cafes"
+            android:background="@drawable/ripple"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginBottom="50dp"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/mueseum"
+            android:text="Mueseums"
+            android:background="@drawable/ripple"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginBottom="50dp"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/atm"
+            android:text="ATM"
+            android:background="@drawable/ripple"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginBottom="50dp"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/gas_station"
+            android:text="Gas"
+            android:background="@drawable/ripple"
+            />
+
+
+
+    </LinearLayout>
+    </HorizontalScrollView>
+
+
+
+
+
 </FrameLayout>
