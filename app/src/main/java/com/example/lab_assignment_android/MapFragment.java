@@ -66,6 +66,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
     String url;
     final int RADIUS = 1500;
     double destLAt,destLong;
+    static boolean directionRequested = false;
     //map
 
 
@@ -176,10 +177,12 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_map_fragment, container, false);
+        final View view = inflater.inflate(R.layout.activity_map_fragment, container, false);
         final ImageButton normal;
         final ImageButton sattelite;
         final ImageButton terrain;
+        final ImageButton btnDirections;
+        btnDirections = view.findViewById(R.id.directions_btn);
         normal = view.findViewById(R.id.normal_mapType);
         sattelite = view.findViewById(R.id.sattelite_maptype);
         terrain = view.findViewById(R.id.terrain_maptype);
@@ -298,6 +301,13 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
             }
         });
 
+
+        btnDirections.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            }
+        });
+
         return view;
     }
 
@@ -393,6 +403,15 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         placeUrl.append( "&type=" + nearbyPlace );
         //placeUrl.append( "&keyword=cruise" );
         placeUrl.append( "&key=" + getString(R.string.api_key ));
+        return placeUrl.toString();
+    }
+
+    private String getDirectionUrl()
+    {
+        StringBuilder placeUrl = new StringBuilder("https://maps.googleapis.com/maps/api/directions/json?"  );
+        placeUrl.append("origin="+latitude+","+longitude);
+        placeUrl.append("&destination="+destLAt+","+destLong);
+        placeUrl.append("&key="+getString(R.string.api_key_class));
         return placeUrl.toString();
     }
 

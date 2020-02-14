@@ -3,6 +3,7 @@ package com.example.lab_assignment_android;
 import android.graphics.Color;
 import android.os.AsyncTask;
 
+import com.example.lab_assignment_android.Database.FetchURL;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -49,7 +50,7 @@ public class GetDirection extends AsyncTask <Object, String, String>
         duration = distanceData.get("duration");
 
         mMap.clear();
-        MainActivity mainActivity = new MainActivity();
+        MapFragment mapFragment = new MapFragment();
 
         //create a new marker with distance and duration as title
         MarkerOptions options = new MarkerOptions()
@@ -59,7 +60,7 @@ public class GetDirection extends AsyncTask <Object, String, String>
                 .snippet("Distance : "+ distance);
         mMap.addMarker(options);
 
-        if(MainActivity.directionRequested)
+        if(MapFragment.directionRequested)
         {
             String[] directionList;
             DataParser directionParser = new DataParser();
